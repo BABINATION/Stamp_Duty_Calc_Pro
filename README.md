@@ -22,6 +22,7 @@ Calculate standard stamp duty, first home buyer exemptions/concessions, and see 
 
 1. **Clone or Download** this repository.
 2. Open `index.html` in your browser.
+3. View from pages : https://babination.github.io/Stamp_Duty_Calc_Pro/
 
 That’s it — it’s all static files!
 
