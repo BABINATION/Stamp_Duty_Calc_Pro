@@ -1,0 +1,419 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;700&display=swap');
+
+html,
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Bree Serif', serif;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+    transition: background 0.6s cubic-bezier(.76, .09, .51, 1.07);
+}
+
+body.bg-default {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+body.bg-nsw {
+    background: linear-gradient(135deg, #ff7675, #d63031);
+}
+
+body.bg-qld {
+    background: linear-gradient(135deg, #F09819, #EDDE5D);
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    width: 100vw;
+    color: white;
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* --- Homepage Styles --- */
+
+#homepage h1 {
+    font-family: 'Nabla', system-ui;
+    font-size: 5.5rem;
+    margin-bottom: 0.5rem;
+    margin-top: 60px;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+}
+
+#homepage .subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.button-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    margin-top: 60px;
+    /* Lowered the container */
+}
+
+.bubble-btn {
+    font-family: 'Rubik Doodle Shadow', sans-serif;
+    padding: 15px 35px;
+    /* Increased padding */
+    border-radius: 50px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1.5rem; /* Adjusted font size for new font */
+    letter-spacing: 1px;
+    font-weight: 400;
+    transition: transform 0.3s;
+    animation: float 3s ease-in-out infinite;
+}
+
+.bubble-btn:hover {
+    animation: jiggle 0.5s ease infinite;
+    transform: scale(1.1);
+}
+
+.bubble-btn:disabled {
+    background: #999 !important;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes jiggle {
+    0%,
+    100% {
+        transform: scale(1.1) rotate(0deg);
+    }
+    25% {
+        transform: scale(1.15) rotate(2deg);
+    }
+    50% {
+        transform: scale(1.1) rotate(0deg);
+    }
+    75% {
+        transform: scale(1.15) rotate(-2deg);
+    }
+}
+
+#NSW {
+    background: linear-gradient(135deg, #ff7675, #d63031);
+}
+
+#QLD {
+    background: linear-gradient(135deg, #F09819, #EDDE5D);
+}
+
+
+/* --- Calculator Page Styles --- */
+
+.calculator-page {
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.home-icon,
+.icon-placeholder {
+    font-size: 2rem;
+    text-decoration: none;
+    width: 40px;
+    /* Give it a fixed width */
+    flex-shrink: 0;
+    color: white;
+}
+
+.calc-header {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem;
+    letter-spacing: 1.5px;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    flex-grow: 1;
+}
+
+.section {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.1));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 25px;
+    color: #2c3e50;
+    /* Dark text for readability */
+    font-weight: 400;
+}
+
+.input-price {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid rgba(44, 62, 80, 0.5);
+    color: #2c3e50;
+    font-size: 2rem;
+    text-align: center;
+    outline: none;
+    font-family: 'Bree Serif', serif;
+}
+
+.input-price::placeholder {
+    color: rgba(44, 62, 80, 0.4);
+}
+
+
+/* --- Animated Toggle Button & Date Styles --- */
+
+.toggles-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+    padding-top: 10px;
+}
+
+.toggle-option,
+.date-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+}
+
+.toggle-btn {
+    width: 60px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(44, 62, 80, 0.2);
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-btn::before {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.9);
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.toggle-btn.active {
+    background-color: #d63031;
+}
+
+body.bg-qld .toggle-btn.active {
+    background-color: #F09819;
+}
+
+.toggle-btn.active::before {
+    background-color: #fff;
+    transform: translateX(30px);
+}
+
+.date-input {
+    background: rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(44, 62, 80, 0.2);
+    color: #2c3e50;
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-family: 'Bree Serif', serif;
+    font-weight: 700;
+}
+
+.date-input::-webkit-calendar-picker-indicator {
+    filter: none;
+    cursor: pointer;
+}
+
+
+/* --- Vertical Results List Styles --- */
+
+.results-list .result-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.results-list .result-item:last-child {
+    margin-bottom: 0;
+}
+
+.result-label {
+    font-size: 1rem;
+    line-height: 1.4;
+    text-align: left;
+    padding-right: 15px;
+}
+
+.result-pill {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 50px;
+    background: rgba(0, 0, 0, 0.1);
+    font-size: 1.2rem;
+    font-weight: 700;
+    min-width: 120px;
+    text-align: center;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.result-highlight {
+    background: #2c3e50;
+    color: #fff;
+    transform: scale(1.05);
+    font-size: 1.3rem;
+}
+
+.tab-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    background: transparent;
+    border: 2px solid rgba(44, 62, 80, 0.3);
+    color: rgba(44, 62, 80, 0.7);
+    padding: 10px 20px;
+    border-radius: 50px;
+    margin: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 700;
+}
+
+.tab-btn.active {
+    background: #2c3e50;
+    color: #fff;
+}
+
+.tab-section {
+    display: none;
+    text-align: left;
+}
+
+.tab-section.active {
+    display: block;
+}
+
+.info-text table {
+    width: 100%;
+    color: #2c3e50;
+}
+
+.info-text th,
+.info-text td {
+    padding: 10px;
+    border-bottom: 1px solid rgba(44, 62, 80, 0.1);
+}
+
+.info-text th {
+    text-align: left;
+}
+
+.info-text ul {
+    padding-left: 20px;
+}
+
+.info-text h3 {
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.info-text a {
+    color: #d63031;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+body.bg-qld .info-text a {
+    color: #F09819;
+}
+
+.info-text a:hover {
+    opacity: 0.8;
+}
+
+.info-text .highlight-news {
+    animation: blink 1.5s linear infinite;
+    color: #d63031;
+    font-weight: 700;
+}
+
+body.bg-qld .info-text .highlight-news {
+    color: #F09819;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.info-text .highlight-point {
+    color: #2980b9;
+    font-weight: 700;
+}
